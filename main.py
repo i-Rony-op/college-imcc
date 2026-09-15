@@ -170,23 +170,90 @@
 #     print(f"{year} is not a leap year.")
 
 
-a = int(input("Enter number A: "))
-b = int(input("Enter number B: "))
-choice = input("Enter Choice: ")
+# a = int(input("Enter number A: "))
+# b = int(input("Enter number B: "))
+# choice = input("Enter Choice: ")
 
-match choice:
-    case "+":
-        print(f"Addition is {a + b}")
-    case "-":
-        print(f"Subtraction is {a - b}")
-    case "*":
-        print(f"Multiplication is {a * b}")
-    case "/":
-        if b == 0:
-            print("Cant divide by zero")
-        else:
-            print(f"Division is {a / b}")
-    case "%":
-        print(f"Remainder is {a % b}")
-    case _:
-        print("Invalid Choice")
+# match choice:
+#     case "+":
+#         print(f"Addition is {a + b}")
+#     case "-":
+#         print(f"Subtraction is {a - b}")
+#     case "*":
+#         print(f"Multiplication is {a * b}")
+#     case "/":
+#         if b == 0:
+#             print("Cant divide by zero")
+#         else:
+#             print(f"Division is {a / b}")
+#     case "%":
+#         print(f"Remainder is {a % b}")
+#     case _:
+#         print("Invalid Choice")
+
+
+# color = input("Enter signal color: ")
+
+# if color == "red":
+#     print("Stop")
+# elif color == "yellow":
+#     print("Get Ready")
+# elif color == "green":
+#     print("Go")
+# else:
+#     print("Invalid color")
+
+
+# balance = 5000
+
+# print("1. Check Balance")
+# print("2. Deposit")
+# print("3. Withdraw")
+# print("4. Exit")
+
+# choice = int(input("Enter your choice: "))
+
+# if choice == 1:
+#     print("Balance:", balance)
+
+# elif choice == 2:
+#     amount = int(input("Enter deposit amount: "))
+#     balance = balance + amount
+#     print("New balance:", balance)
+
+# elif choice == 3:
+#     amount = int(input("Enter withdrawal amount: "))
+
+#     if balance >= amount:
+#         balance = balance - amount
+#         print("New balance:", balance)
+#     else:
+#         print("Insufficient balance")
+
+# elif choice == 4:
+#     print("Exit")
+
+# else:
+#     print("Invalid choice")
+
+
+# user1 = input("Player 1 Enter Choice: ")
+# user2 = input("Player 2 Enter Choice: ")
+
+
+# if user1 == user2:
+#     print("Draw")
+# elif user1 == "rock" and user2 == "paper":
+#     print("Print Player 2 Wins")
+# elif user1 == "paper" and user2 == "rock":
+#     print("Print Player 1 Wins")
+# elif user1 == "scissor" and user2 == "paper":
+#     print("Print Player 1 Wins")
+# elif user1 == "paper" and user2 == "scissor":
+#     print("Print Player 1 Wins")
+# elif user1 == "rock" and user2 == "scissor":
+#     print("Print Player 1 Wins")
+# elif user1 == "scissor" and user2 == "rock":
+#     print("Print Player 2 Wins")
+# else:
+#   print("Invalid Choice")
