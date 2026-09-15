@@ -257,3 +257,156 @@
 #     print("Print Player 2 Wins")
 # else:
 #   print("Invalid Choice")
+
+
+# while True:
+#   string = input("Enter Pass: ")
+#   if string=="raunak":
+#     print("Matched")
+#     break
+#   else:
+#     print("Not Matched")
+
+
+# end = int(input("Enter the stop number: "))
+# i = 0
+# while i <= end:
+#     print(i)
+#     i = i + 1
+#     if i == end:
+#         break
+
+# end = int(input("Enter the stop number: "))
+# i = 0
+# while i < end:
+#     i = i + 1
+#     if i % 2 ==0:
+#       print(i)
+
+
+# end = int(input("Enter the stop number: "))
+# i = 0
+# even = 0
+# odd = 0
+# while i < end:
+#     if i % 2 == 0:
+#         even = even + 1
+
+#     else :
+#         odd = odd + 1
+#     i = i + 1
+
+# print("Even", even)
+# print("Odd", odd)
+
+
+# i = 0
+# while i < 10:
+#     i = i + 1
+#     if i == 5:
+#         continue
+#     print(i-1)
+
+
+# n = int(input("Enter Number: "))
+# i = 0
+# while i <= 10:
+#     print(f"{n} X {i} = {n*i}")
+#     i = i + 1
+
+
+# primes = []
+# rangee = int(input("Enter Range: "))
+# num = 2
+
+# while num <= rangee:
+#     i = 2
+#     is_prime = True
+
+#     while i < num:
+#         if num % i == 0:
+#             is_prime = False
+#             break
+#         i += 1
+
+#     if is_prime:
+#         primes.append(num)
+
+#     num += 1
+
+# print(primes)
+
+# list = [1, 2, 3, 4, 2]
+# sum = 0
+# count = 0
+# for i in list:
+#     sum = sum + i
+#     count = count + 1
+# print("Sum: ", sum)
+# print("Average: ", sum / count)
+
+# while True:
+#     print("1. Addition")
+#     print("2. Subtraction")
+#     print("3. Multiply")
+#     print("4. Division")
+#     print("5. Remainder")
+#     print("6. Floor Division")
+#     print("7. Power")
+#     print("8. Factorial")
+#     print("0. Exit")
+
+#     choice = int(input("Enter your choice : "))
+
+#     if choice == 1:
+#         a = int(input("Enter 1st no. : "))
+#         b = int(input("Enter 2nd no. : "))
+#         print("Addition : ", a + b)
+
+#     elif choice == 2:
+#         a = int(input("Enter 1st no. : "))
+#         b = int(input("Enter 2nd no. : "))
+#         print("Subtraction : ", a - b)
+
+#     elif choice == 3:
+#         a = int(input("Enter 1st no. : "))
+#         b = int(input("Enter 2nd no. : "))
+#         print("Multiply : ", a * b)
+
+#     elif choice == 4:
+#         a = int(input("Enter 1st no. : "))
+#         b = int(input("Enter 2nd no. : "))
+#         if b == 0:
+#             print("Cannot divide by zero")
+#         else:
+#             print("Division : ", a / b)
+
+#     elif choice == 5:
+#         a = int(input("Enter 1st no. : "))
+#         b = int(input("Enter 2nd no. : "))
+#         print("Remainder : ", a % b)
+
+#     elif choice == 6:
+#         a = int(input("Enter 1st no. : "))
+#         b = int(input("Enter 2nd no. : "))
+#         if b == 0:
+#             print("Cannot divide by zero")
+#         else:
+#             print("Floor Division : ", a // b)
+
+#     elif choice == 7:
+#         a = int(input("Enter 1st no. : "))
+#         b = int(input("Enter 2nd no. : "))
+#         print("Power : ", a ** b)
+
+#     elif choice==8:
+#         a = int(input("Enter no. : "))
+#         fac=1
+#         for i in range(1,a+1):
+#             fac=fac*i
+#         print(fac)
+#     elif choice==0:
+#         break
+#     else:
+#         print("Invalid Choice")
+
