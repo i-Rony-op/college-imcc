@@ -410,3 +410,103 @@
 #     else:
 #         print("Invalid Choice")
 
+# def printty(text):
+#   print(text)
+
+
+# printty("hello")
+
+
+# def sum(a, b):
+#   print ("SUM: ",a+b)
+
+# sum(10 ,20)
+# sum(20 ,20)
+# sum(40 ,30)
+
+# def pi():
+#   return 3.14
+
+
+# print(pi())
+
+
+# def sum(a, b):
+#   return a+b
+
+# print(sum(10 ,20))
+
+
+# def name(name= "r0ny"):
+#   print("hello", name)
+
+# name("raunak")
+# name()
+
+# a = int(input("Enter 1st no. : "))
+# b = int(input("Enter 2nd no. : "))
+
+
+# def calculator(a, b):
+#     print("1. Addition")
+#     print("2. Subtraction")
+#     print("3. Multiply")
+#     print("4. Division")
+#     print("5. Remainder")
+
+#     choice = int(input("Enter your choice : "))
+
+#     if choice == 1:
+#         print("Addition : ", a + b)
+#     elif choice == 2:
+#         print("Subtraction : ", a - b)
+#     elif choice == 3:
+#         print("Multiply : ", a * b)
+#     elif choice == 4:
+#         if b == 0:
+#             print("Cannot divide by zero")
+#         else:
+#             print("Division : ", a / b)
+#     elif choice == 5:
+#         print("Remainder : ", a % b)
+#     else:
+#         print("Invalid Choice")
+
+
+# calculator(a, b)
+
+
+# def num(n):
+#   print(n)
+#   num(n-1)
+
+# num(9)
+
+
+# a = int(input("Enter no. : "))
+
+
+# def factorial(a):
+#     fac = 1
+#     for i in range(1, a + 1):
+#         fac = fac * i
+#     print(fac)
+
+# factorial(a)
+
+# def factorial(n):
+#     if n == 0 or n == 1:
+#         return 1
+#     return n * factorial(n - 1)
+
+
+# num = int(input("Enter a number: "))
+
+# print("Factorial:", factorial(num))
+
+
+# square = lambda n: n * n
+# print(square(8))
+
+# add = lambda n, m: n + m
+# print(add(8, 9))
