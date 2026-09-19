@@ -510,3 +510,59 @@
 
 # add = lambda n, m: n + m
 # print(add(8, 9))
+
+
+# for i in range(1, 6):
+#     for j in range(1, i + 1):
+#         print("*", end=" ")
+#     print()
+
+# for i in range(5, 0, -1):
+#     for j in range(i):
+#         print("*", end=" ")
+#     print()
+
+
+# for i in range(0, 6):
+#     for j in range(0, i ):
+#         print(j +1, end=" ")
+#     print()
+
+# for i in range(5, 0 , -1):
+#     for j in range(0, i ):
+#         print(j +1, end=" ")
+#     print()
+
+# x = 1
+# for i in range(1, 7):
+#     for j in range(0, i):
+#         print(x, end=" ")
+#         x += 1
+#     print()
+
+# print("----------------------------------------------------------")
+
+# x = 21
+# for i in range(6, 0, -1):
+#     for j in range(0, i):
+#         print(x, end=" ")
+#         x -= 1
+#     print()
+
+
+# n = int(input("Enter Number: "))
+# sum = 0
+# for i in range(0, n + 1):
+#     sum = sum + i
+
+# print(sum)
+
+# n = int(input("Enter NO: "))
+# count = 0
+# if n == 0:
+#     print(1)
+# else:
+#     while n > 0:
+#         count = count + 1
+#         n //= 10
+# print(count)
