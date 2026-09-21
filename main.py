@@ -558,11 +558,23 @@
 # print(sum)
 
 # n = int(input("Enter NO: "))
-# count = 0
-# if n == 0:
-#     print(1)
-# else:
-#     while n > 0:
-#         count = count + 1
-#         n //= 10
-# print(count)
+
+# for i in range(1, n + 1):
+
+#     for j in range(n - i):
+#         print(" ", end="")
+
+#     for k in range(2 * i - 1):
+#         print("*", end="")
+
+#     print()
+
+n = int(input("Enter NO: "))
+count = 0
+if n == 0:
+    print(1)
+else:
+    while n > 0:
+        count = count + 1
+        n //= 10
+    print(count)
