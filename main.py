@@ -579,13 +579,26 @@
 #         count = count + 1
 #     print(count)
 
-n = int(input("Enter Number: "))
+# n = int(input("Enter Number: "))
 
+# reverse = 0
+
+# while n > 0:
+#     digit = n % 10
+#     reverse = reverse * 10 + digit
+#     n //= 10
+# print(reverse)
+
+x = -121
+n = x
 reverse = 0
-
-while n > 0:
-    digit = n % 10
+if x < 0:
+    print(bool(False))
+while x > 0:
+    digit = x % 10
     reverse = reverse * 10 + digit
-    n //= 10
-print(reverse)
-
+    x //= 10
+if n == reverse:
+    print(bool(True))
+else:
+    print(bool(False))
