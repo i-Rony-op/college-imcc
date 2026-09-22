@@ -636,34 +636,34 @@
 # vec.getVector()
 
 
-class Shape:
-    def __init__(self, color):
-        self.color = color
+# class Shape:
+#     def __init__(self, color):
+#         self.color = color
 
-    def print_color(self):
-        print(self.color)
-
-
-class Rectangle(Shape):
-
-    def __init__(self, color, width, height):
-        super().__init__(color)
-        self.width = width
-        self.height = height
-
-    def area(self):
-        return self.width * self.height
+#     def print_color(self):
+#         print(self.color)
 
 
-class Square(Rectangle):
+# class Rectangle(Shape):
 
-    def __init__(self, color, side):
-        super().__init__(color, side, side)
+#     def __init__(self, color, width, height):
+#         super().__init__(color)
+#         self.width = width
+#         self.height = height
+
+#     def area(self):
+#         return self.width * self.height
 
 
-s = Square("Blue", 5)
-r = Rectangle("Blue", 5, 9)
+# class Square(Rectangle):
 
-print(r.area())
-s.print_color()
-print(s.area())
+#     def __init__(self, color, side):
+#         super().__init__(color, side, side)
+
+
+# s = Square("Blue", 5)
+# r = Rectangle("Blue", 5, 9)
+
+# print(r.area())
+# s.print_color()
+# print(s.area())
