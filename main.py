@@ -589,16 +589,81 @@
 #     n //= 10
 # print(reverse)
 
-x = -121
-n = x
-reverse = 0
-if x < 0:
-    print(bool(False))
-while x > 0:
-    digit = x % 10
-    reverse = reverse * 10 + digit
-    x //= 10
-if n == reverse:
-    print(bool(True))
-else:
-    print(bool(False))
+# x = -121
+# n = x
+# reverse = 0
+# if x < 0:
+#     print(bool(False))
+# while x > 0:
+#     digit = x % 10
+#     reverse = reverse * 10 + digit
+#     x //= 10
+# if n == reverse:
+#     print(bool(True))
+# else:
+#     print(bool(False))
+
+
+# class Rectangle:
+#     def __init__(self, x, y, width, height):
+#         self.x = x
+#         self.y = y
+#         self.width = width
+#         self.height = height
+
+#     def area(self):
+#         return self.width * self.height
+
+
+# rect = Rectangle(10, 20, 30, 40)
+# print(rect.area())
+
+
+# class Vector:
+#     def __init__(
+#         self,
+#         x,
+#         y,
+#     ):
+#         self.x = x
+#         self.y = y
+
+#     def getVector(self):
+#         print(f"x = {self.x} y = {self.y} ")
+
+
+# vec = Vector(10, 20)
+# vec.getVector()
+
+
+class Shape:
+    def __init__(self, color):
+        self.color = color
+
+    def print_color(self):
+        print(self.color)
+
+
+class Rectangle(Shape):
+
+    def __init__(self, color, width, height):
+        super().__init__(color)
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+
+class Square(Rectangle):
+
+    def __init__(self, color, side):
+        super().__init__(color, side, side)
+
+
+s = Square("Blue", 5)
+r = Rectangle("Blue", 5, 9)
+
+print(r.area())
+s.print_color()
+print(s.area())
