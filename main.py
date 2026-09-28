@@ -667,3 +667,50 @@
 # print(r.area())
 # s.print_color()
 # print(s.area())
+
+
+# n = int(input("Enter Number: "))
+
+# prime = 0
+# for i in range(1, n + 1):
+#     if n % i == 0:
+#         prime += 1
+
+# if prime == 2:
+#     print(f"{n} Prime No.")
+# else:
+#     print(f"{n} Not Prime No.")
+
+
+# n = int(input("Enter Number: "))
+
+# flag = 0
+# for i in range(2, (n // 2) + 1):
+#     if n % i == 0:
+#         flag = 1
+#         break
+
+# if flag == 1:
+#     print(f"{n} Not Prime No.")
+# else:
+#     print(f"{n} Prime No.")
+
+l = [2, 3, 5, 11, 9, 14, 18]
+mx = smax = float("-inf")
+mn = smin = float("inf")
+
+for i in l:
+    if i > mx:
+        smax, mx = mx, i
+    elif i > smax and i != mx:
+        smax = i
+
+    if i < mn:
+        smin, mn = mn, i
+    elif i < smin and i != mn:
+        smin = i
+
+print(f"MAX: {mx}")
+print(f"MIN: {mn}")
+print(f"SMAX: {smax}")
+print(f"SMIN: {smin}")
