@@ -695,22 +695,95 @@
 # else:
 #     print(f"{n} Prime No.")
 
-l = [2, 3, 5, 11, 9, 14, 18]
-mx = smax = float("-inf")
-mn = smin = float("inf")
+# l = [2, 3, 5, 11, 9, 14, 18]
+# mx = smax = float("-inf")
+# mn = smin = float("inf")
 
-for i in l:
-    if i > mx:
-        smax, mx = mx, i
-    elif i > smax and i != mx:
-        smax = i
+# for i in l:
+#     if i > mx:
+#         smax, mx = mx, i
+#     elif i > smax and i != mx:
+#         smax = i
 
-    if i < mn:
-        smin, mn = mn, i
-    elif i < smin and i != mn:
-        smin = i
+#     if i < mn:
+#         smin, mn = mn, i
+#     elif i < smin and i != mn:
+#         smin = i
 
-print(f"MAX: {mx}")
-print(f"MIN: {mn}")
-print(f"SMAX: {smax}")
-print(f"SMIN: {smin}")
+# print(f"MAX: {mx}")
+# print(f"MIN: {mn}")
+# print(f"SMAX: {smax}")
+# print(f"SMIN: {smin}")
+
+
+# num = int(input("Enter a Number: "))
+# x = num
+# reverse = 0
+# sum = 0
+
+# while num > 0:
+#     digit = num % 10
+#     reverse = reverse * 10 + digit
+#     sum += digit
+#     num //= 10
+
+# print(f"Sum of Digits is: {sum}")
+
+
+# if reverse == x:
+#     print("Number is Palindrme")
+# else:
+#     print("Number is not a Palindrme")
+
+# num = int(input("Enter a Number: "))
+# x = num
+# sum = 0
+# n = len(str(num))
+# while num > 0:
+#     digit = num % 10
+#     sum += digit**n
+#     num //= 10
+
+# if sum == x:
+#     print("Number is Armstrong")
+# else:
+#     print("Number is not a Armstrong")
+
+
+# a = int(input("Enter a number : "))
+# z = a
+# b = 0
+# c = 0
+# while a>0:
+#     c+=1
+#     a//=10
+# a = z
+
+# while a>0:
+#     b = b + (a%10)**c
+#     a//=10
+
+# if b == z:
+#     print("The number is armstrong.")
+# else:
+#     print("The number is not armstrong.")
+
+
+# num = int(input("Enter a Number: "))
+# sum = 0
+# for i in range(1, num + 1):
+#     sum = (num * (num + 1) // 2) ** 2
+
+# print(f"Sum of Digits is: {sum}")
+
+
+# for i in range(5, 0, -1):
+#     for j in range(i, 0, -1):
+#         print(j, end=" ")
+#     print()
+
+# n = 5
+# for i in range(1, n + 1):
+#     for j in range(n, i - 1, -1):
+#         print(j, end=" ")
+#     print()
