@@ -1025,13 +1025,13 @@ def read_array():
 # for word in words:
 #     reversed_word = ""
 #     for ch in word:
-#         reversed_word = ch + reversed_word   
+#         reversed_word = ch + reversed_word
 #     result = result + reversed_word + " "
 
 # print(result.strip())
 
 
-# 12. Longest , shortest word 
+# 12. Longest , shortest word
 # sentence = input("Enter a sentence: ")
 # words = sentence.split()
 
@@ -1046,3 +1046,113 @@ def read_array():
 
 # print("Longest word  =", longest)
 # print("Shortest word =", shortest)
+
+# print("-----------list-------------------------")
+# l=[10,20,30,40]
+# print(l)
+
+# l.append(50)
+# print(l)
+
+# l.insert(3,500)
+# print(l)
+
+# l.remove(20)
+# print(l)
+
+# l.sort()
+# print(l)
+
+# l.reverse()
+# print(l)
+
+# print("-----------String-------------------------")
+# str="Hello World"
+
+# print(str.upper())
+# print(str.lower())
+# print(str.find("Hello"))
+# print(str.split())
+# print(str.replace("World","Mam"))
+
+# 1. sum of 10 even nos
+# sum = 0
+# for i in range(1,11):
+#   if i % 2 == 0:
+#     sum += i
+#     print(i)
+
+# print(sum)
+
+# 2. Squares
+# s = int(input("Enter start  number: "))
+# n = int(input("Enter end number: "))
+
+# for i in range(s, s + n + 1):
+#     print(i, " : ", i**2)
+
+# 3. Reverse string
+# s = input("Enter the string: ")
+# print(s[::-1])
+
+# 4. count vowels
+
+# s = input("Enter the string: ")
+# vow = "aeiou"
+
+# count = 0
+# for i in s.lower():
+#   if i in vow:
+#     count+=1
+
+# print("Vowels: ", count)
+
+# 5. duplicates from a list
+
+# l = [1, 3, 4, 1, 3, 4, 6, 7, 6, 8]
+
+# for i in range(len(l) - 1, -1, -1):
+#     for j in range(i):
+#         if l[i] == l[j]:
+#             l.pop(i)
+#             break
+
+# print(l)
+
+# 6. reverse a list
+
+# l = [1,3,4,1,3,4,6,7,6,8]
+# l.reverse()
+# print(l)
+
+
+# 7. pattern
+
+# for i in range(1,6):
+#   for j in range(1,i+1):
+#     print("*", end=" ")
+#   print()
+
+
+# 8. pattern
+
+# for i in range(1, 6):
+#     if i % 2 == 1:
+#         symbol = "*"
+#     else:
+#         symbol = "#"
+#     space = 5 - i
+#     stars = 2 * i - 1
+#     print(" " * space, symbol * stars)
+
+# 9. counts vowels count
+# s= input("Enter String: ")
+# vowels = "aeiouAEIOU"
+# count=0
+# hm={}
+# for i in s:
+#     if i in vowels:
+#         hm[i] = hm.get(i, 0) + 1
+
+# for i in hm:
+#     print(i," : ",hm[i])
