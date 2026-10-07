@@ -801,13 +801,13 @@
 # 1.Array Sum
 
 
-def read_array():
-    n = int(input("Enter N: "))
-    arr = []
-    for i in range(n):
-        value = int(input("Enter element " + str(i + 1) + ": "))
-        arr.append(value)
-    return arr
+# def read_array():
+#     n = int(input("Enter N: "))
+#     arr = []
+#     for i in range(n):
+#         value = int(input("Enter element " + str(i + 1) + ": "))
+#         arr.append(value)
+#     return arr
 
 
 # arr = read_array()
@@ -1156,3 +1156,64 @@ def read_array():
 
 # for i in hm:
 #     print(i," : ",hm[i])
+
+
+# for i in range(6):
+#   for j in range(i):
+#     print(chr(65+j), end=" ")
+#   print()
+
+
+# for i in range(5):
+#   for j in range(i+1):
+#     print(chr(65+i), end=" ")
+#   print()
+
+# num = 0
+# for i in range(5):
+#   for j in range(i+1):
+#     print(chr(65+num), end=" ")
+#     num += 1
+#   print()
+# num = 0
+# for i in range(5):
+#     print(" "*(5-i+1), end=" ")
+#     for j in range(2*i+1):
+#       print(chr(65+j), end=" ")
+#     print()
+
+
+class Node:
+    def __init__(self, value):
+        self.data = value
+        self.next = None
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, new_node):
+        if self.head == None:
+          self.head  = new_node
+        else:
+          temp = self.head
+          while(temp.next):
+            temp = temp.next
+          temp.next = new_node
+    def print(self):
+      temp = self.head
+      while(temp):
+        print(temp.data)
+        temp = temp.next
+
+list1 = LinkedList()
+n1 = Node(10)
+n2 = Node(20)
+n3 = Node(30)
+list1.append(n1)
+list1.append(n2)
+list1.append(n3)
+list1.append(Node(30))
+list1.append(Node(40))
+list1.print()
