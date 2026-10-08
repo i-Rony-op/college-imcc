@@ -1183,37 +1183,80 @@
 #     print()
 
 
-class Node:
-    def __init__(self, value):
-        self.data = value
-        self.next = None
+# class Node:
+#     def __init__(self, value):
+#         self.data = value
+#         self.next = None
 
 
-class LinkedList:
-    def __init__(self):
-        self.head = None
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
 
-    def append(self, new_node):
-        if self.head == None:
-          self.head  = new_node
-        else:
-          temp = self.head
-          while(temp.next):
-            temp = temp.next
-          temp.next = new_node
-    def print(self):
-      temp = self.head
-      while(temp):
-        print(temp.data)
-        temp = temp.next
+#     def append(self, new_node):
+#         if self.head == None:
+#           self.head  = new_node
+#         else:
+#           temp = self.head
+#           while(temp.next):
+#             temp = temp.next
+#           temp.next = new_node
+#     def print(self):
+#       temp = self.head
+#       while(temp):
+#         print(temp.data)
+#         temp = temp.next
 
-list1 = LinkedList()
-n1 = Node(10)
-n2 = Node(20)
-n3 = Node(30)
-list1.append(n1)
-list1.append(n2)
-list1.append(n3)
-list1.append(Node(30))
-list1.append(Node(40))
-list1.print()
+# list1 = LinkedList()
+# n1 = Node(10)
+# n2 = Node(20)
+# n3 = Node(30)
+# list1.append(n1)
+# list1.append(n2)
+# list1.append(n3)
+# list1.append(Node(30))
+# list1.append(Node(40))
+# list1.print()
+
+
+# str = "Raunak"
+# count = 0
+# for i in str.lower() :
+#   if "a" in str:
+#     count+= 1
+# print(count)
+
+
+# print the sum of last 4 elements of  the list 
+# find out the differenece between min and max element of the list 
+# insert a number in list , at 6th posi , this number must be 1/3 of number stored at 4th position 
+
+
+# last 4 
+
+# s = [1,2,34,5,5,6,7,7,8,8,8]
+
+
+# print(f"Sum: {s[-1]+s[-2]+s[-3]+s[-4]}")
+
+
+# # diffeerence in min max 
+# numbers = [10, 5, 25, 8, 15]
+
+# min = min(numbers)
+# max = max(numbers)
+
+# difference = max - min
+
+# print(difference)
+
+
+# # insert at 6
+
+# numbers = [10, 20, 30, 60, 50, 70, 80]
+
+# number = numbers[3] / 3
+
+# numbers.insert(5, number)
+
+# print(numbers)
