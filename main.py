@@ -1227,12 +1227,12 @@
 # print(count)
 
 
-# print the sum of last 4 elements of  the list 
-# find out the differenece between min and max element of the list 
-# insert a number in list , at 6th posi , this number must be 1/3 of number stored at 4th position 
+# print the sum of last 4 elements of  the list
+# find out the differenece between min and max element of the list
+# insert a number in list , at 6th posi , this number must be 1/3 of number stored at 4th position
 
 
-# last 4 
+# last 4
 
 # s = [1,2,34,5,5,6,7,7,8,8,8]
 
@@ -1240,7 +1240,7 @@
 # print(f"Sum: {s[-1]+s[-2]+s[-3]+s[-4]}")
 
 
-# # diffeerence in min max 
+# # diffeerence in min max
 # numbers = [10, 5, 25, 8, 15]
 
 # min = min(numbers)
@@ -1260,3 +1260,81 @@
 # numbers.insert(5, number)
 
 # print(numbers)
+
+
+# import random
+
+
+# students = {
+#     101: {"Name": "Aditi", "Scores": [78, 85, 90]},
+#     102: {"Name": "Rahul", "Scores": [45, 60, 50]},
+#     103: {"Name": "Sneha", "Scores": [90, 88, 95]},
+#     104: {"Name": "Karan", "Scores": [55, 72, 68]},
+#     105: {"Name": "Priya", "Scores": [49, 51, 47]},
+# }
+
+# for sid, details in students.items():
+#     avg = sum(details["Scores"]) / len(details["Scores"])
+#     details["Average"] = avg
+#     details["Passed"] = avg >= 50
+
+# print("Students Who Passed: ")
+# for sid, details in students.items():
+#     if details["Passed"] == True:
+#         print(details["Name"])
+
+# # wap to guess a number and give reward
+# user = int(input("Enter Number between 1 to 10 : "))
+# num = random.randint(1,10)
+# if user == num:
+#   print("Yayyyyyyy")
+# else:
+#   print("asafdagghjkerfjgcdxsghjk")
+
+# dict library
+
+#  vowel with z
+# s = input("Enter the Name: ")
+# vowels = "aeiou"
+# for i in s:
+#     if i.lower() in vowels:
+#         s = s.replace(i, "z")
+# print(s)
+
+#  list of numbers and string , accept from user , seperate the list from the max number , display the name in a desc order
+
+
+
+
+# n = int(input("Enter the size of the List: "))
+# list = []
+# for i in range(0, n):
+#     choice = input("Enter n for number and s for string: ")
+
+#     if choice == "n":
+#         value = int(input("Enter the number: "))
+#         list.append(value)
+#     else:
+#         value = input("Enter the string: ")
+#         list.append(value)
+
+# print("Orignal List: ", list)
+
+# numbers = []
+# for i in list:
+#     if type(i) == int:
+#         numbers.append(i)
+
+# maximum = max(numbers)
+# indexofmax = list.index(maximum)
+
+# l1 = list[:indexofmax]
+# l2 = list[indexofmax:]
+
+# print("List before maximum:", l1)
+# print("List from maximum:", l2)
+
+
+# numbers.sort(reverse=True)  
+
+# print("Numbers in descending order:", numbers)
