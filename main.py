@@ -1183,40 +1183,72 @@
 #     print()
 
 
-# class Node:
-#     def __init__(self, value):
-#         self.data = value
-#         self.next = None
+#single linear linked list
+class Node:
+    def __init__(self,value):
+        self.data=value
+        self.next=None
 
+class SingleLinkedList():
+    def __init__(self):
+        self.head=None
+        
+    def append(self,new_node):
+        if self.head==None:
+            self.head=new_node
+        else:
+            temp=self.head
+            while temp.next!=None:
+                temp=temp.next
+            temp.next=new_node
+    def print(self):
+        temp=self.head
+        while temp:
+            print(temp.data)
+            temp=temp.next
+    def insert_at_pos(self,pos,new_node):
+        if pos==1:
+            new_node.next=self.head
+            self.head=new_node
+        else:
+            p=1
+            temp=self.head
+            while(p!=pos-1):
+                temp=temp.next
+                p+=1
+        new_node.next=temp.next
+        temp.next=new_node
 
-# class LinkedList:
-#     def __init__(self):
-#         self.head = None
+    def delete(self,value):
+        temp=self.head
+        prev=None
+        if temp.data==value:  #first node to delete
+            self.head=self.head.next
+        else:
+            while(temp.data!=value):
+                prev=temp
+                temp=temp.next
+                if temp==None:
+                    print("Value is not Present in the list")
+                    return
+            prev.next=temp.next
+            temp=None
 
-#     def append(self, new_node):
-#         if self.head == None:
-#           self.head  = new_node
-#         else:
-#           temp = self.head
-#           while(temp.next):
-#             temp = temp.next
-#           temp.next = new_node
-#     def print(self):
-#       temp = self.head
-#       while(temp):
-#         print(temp.data)
-#         temp = temp.next
+list1=SingleLinkedList()
+n1=Node(10)
+n2=Node(20)
+list1.append(n1)
+list1.append(n2)
+list1.append(Node(30))
+list1.append(Node(40))
+list1.insert_at_pos(3,Node(100))
+list1.delete(10)
 
-# list1 = LinkedList()
-# n1 = Node(10)
-# n2 = Node(20)
-# n3 = Node(30)
-# list1.append(n1)
-# list1.append(n2)
-# list1.append(n3)
-# list1.append(Node(30))
-# list1.append(Node(40))
-# list1.print()
+list1.print()
+print("---------------")
+list1.delete(2000)
+list1.print()
+
 
 
 # str = "Raunak"
