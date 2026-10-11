@@ -1183,72 +1183,75 @@
 #     print()
 
 
-#single linear linked list
-class Node:
-    def __init__(self,value):
-        self.data=value
-        self.next=None
+# single linear linked list
+# class Node:
+#     def __init__(self, value):
+#         self.data = value
+#         self.next = None
 
-class SingleLinkedList():
-    def __init__(self):
-        self.head=None
-        
-    def append(self,new_node):
-        if self.head==None:
-            self.head=new_node
-        else:
-            temp=self.head
-            while temp.next!=None:
-                temp=temp.next
-            temp.next=new_node
-    def print(self):
-        temp=self.head
-        while temp:
-            print(temp.data)
-            temp=temp.next
-    def insert_at_pos(self,pos,new_node):
-        if pos==1:
-            new_node.next=self.head
-            self.head=new_node
-        else:
-            p=1
-            temp=self.head
-            while(p!=pos-1):
-                temp=temp.next
-                p+=1
-        new_node.next=temp.next
-        temp.next=new_node
 
-    def delete(self,value):
-        temp=self.head
-        prev=None
-        if temp.data==value:  #first node to delete
-            self.head=self.head.next
-        else:
-            while(temp.data!=value):
-                prev=temp
-                temp=temp.next
-                if temp==None:
-                    print("Value is not Present in the list")
-                    return
-            prev.next=temp.next
-            temp=None
+# class SingleLinkedList:
+#     def __init__(self):
+#         self.head = None
 
-list1=SingleLinkedList()
-n1=Node(10)
-n2=Node(20)
-list1.append(n1)
-list1.append(n2)
-list1.append(Node(30))
-list1.append(Node(40))
-list1.insert_at_pos(3,Node(100))
-list1.delete(10)
+#     def append(self, new_node):
+#         if self.head == None:
+#             self.head = new_node
+#         else:
+#             temp = self.head
+#             while temp.next != None:
+#                 temp = temp.next
+#             temp.next = new_node
 
-list1.print()
-print("---------------")
-list1.delete(2000)
-list1.print()
+#     def print(self):
+#         temp = self.head
+#         while temp:
+#             print(temp.data)
+#             temp = temp.next
 
+#     def insert_at_pos(self, pos, new_node):
+#         if pos == 1:
+#             new_node.next = self.head
+#             self.head = new_node
+#         else:
+#             p = 1
+#             temp = self.head
+#             while p != pos - 1:
+#                 temp = temp.next
+#                 p += 1
+#         new_node.next = temp.next
+#         temp.next = new_node
+
+#     def delete(self, value):
+#         temp = self.head
+#         prev = None
+#         if temp.data == value:  # first node to delete
+#             self.head = self.head.next
+#         else:
+#             while temp.data != value:
+#                 prev = temp
+#                 temp = temp.next
+#                 if temp == None:
+#                     print("Value is not Present in the list")
+#                     return
+#             prev.next = temp.next
+#             temp = None
+
+
+# list1 = SingleLinkedList()
+# n1 = Node(10)
+# n2 = Node(20)
+# list1.append(n1)
+# list1.append(n2)
+# list1.append(Node(30))
+# list1.append(Node(40))
+# list1.insert_at_pos(3, Node(100))
+# list1.delete(10)
+
+# list1.print()
+# print("---------------")
+# list1.delete(2000)
+# list1.print()
 
 
 # str = "Raunak"
@@ -1336,8 +1339,6 @@ list1.print()
 #  list of numbers and string , accept from user , seperate the list from the max number , display the name in a desc order
 
 
-
-
 # n = int(input("Enter the size of the List: "))
 # list = []
 # for i in range(0, n):
@@ -1367,6 +1368,118 @@ list1.print()
 # print("List from maximum:", l2)
 
 
-# numbers.sort(reverse=True)  
+# numbers.sort(reverse=True)
 
 # print("Numbers in descending order:", numbers)
+
+
+def solution():
+    class Node:
+        def __init__(self, data):
+            self.data = data
+            self.next = None
+
+    class LinkedList:
+        def __init__(self):
+            self.head = None
+
+        def create(self, values):
+            for value in values:
+                self.insert(value, self.length())
+
+        def length(self):
+            count = 0
+            current = self.head
+            while current:
+                count += 1
+                current = current.next
+            return count
+
+        def insert(self, value, position):
+            new_node = Node(value)
+            if position <= 0 or self.head is None:
+                new_node.next = self.head
+                self.head = new_node
+                return
+
+            current = self.head
+            index = 0
+            while current.next and index < position - 1:
+                current = current.next
+                index += 1
+
+            new_node.next = current.next
+            current.next = new_node
+
+        def traverse(self):
+            result = []
+            current = self.head
+            while current:
+                result.append(str(current.data))
+                current = current.next
+            return " ".join(result)
+
+        def middle(self):
+            slow = fast = self.head
+            if not slow:
+                return None
+            while fast and fast.next:
+                slow = slow.next
+                fast = fast.next.next
+            return slow.data
+
+        def delete(self, value):
+            if not self.head:
+                return
+
+            if self.head.data == value:
+                self.head = self.head.next
+                return
+
+            current = self.head
+            while current.next:
+                if current.next.data == value:
+                    current.next = current.next.next
+                    return
+                current = current.next
+
+        def reverse(self):
+            previous = None
+            current = self.head
+            while current:
+                next_node = current.next
+                current.next = previous
+                previous = current
+                current = next_node
+            self.head = previous
+
+        def consecutive_sums(self):
+            sums = []
+            current = self.head
+            while current and current.next:
+                sums.append(str(current.data + current.next.data))
+                current = current.next
+            return " ".join(sums)
+
+    ll = LinkedList()
+    ll.create([1, 2, 3, 4, 5])
+
+    print("Linked List:", ll.traverse())
+
+    ll.insert(10, 2)
+    print("After Insertion:", ll.traverse())
+
+    print("Middle Node:", ll.middle())
+
+    ll.delete(10)
+    print("After Deletion:", ll.traverse())
+
+    ll.reverse()
+    print("Reversed List:", ll.traverse())
+
+    print("Consecutive Sums:", ll.consecutive_sums())
+
+
+if __name__ == "__main__":
+    solution()
+
