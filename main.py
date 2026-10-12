@@ -1461,6 +1461,21 @@ def solution():
                 current = current.next
             return " ".join(sums)
 
+        def delete_first(self):
+            if self.head:
+                self.head = self.head.next
+
+        def delete_last(self):
+            if not self.head:
+                return
+            if not self.head.next:
+                self.head = None
+                return
+            current = self.head
+            while current.next.next:
+                current = current.next
+            current.next = None
+
     ll = LinkedList()
     ll.create([1, 2, 3, 4, 5])
 
@@ -1470,6 +1485,12 @@ def solution():
     print("After Insertion:", ll.traverse())
 
     print("Middle Node:", ll.middle())
+
+    ll.delete_first()
+    print("After Deleting First:", ll.traverse())
+
+    ll.delete_last()
+    print("After Deleting Last:", ll.traverse())
 
     ll.delete(10)
     print("After Deletion:", ll.traverse())
