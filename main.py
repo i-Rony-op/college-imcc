@@ -1373,134 +1373,169 @@
 # print("Numbers in descending order:", numbers)
 
 
-def solution():
-    class Node:
-        def __init__(self, data):
-            self.data = data
-            self.next = None
+# def solution():
+#     class Node:
+#         def __init__(self, data):
+#             self.data = data
+#             self.next = None
 
-    class LinkedList:
-        def __init__(self):
-            self.head = None
+#     class LinkedList:
+#         def __init__(self):
+#             self.head = None
 
-        def create(self, values):
-            for value in values:
-                self.insert(value, self.length())
+#         def create(self, values):
+#             for value in values:
+#                 self.insert(value, self.length())
 
-        def length(self):
-            count = 0
-            current = self.head
-            while current:
-                count += 1
-                current = current.next
-            return count
+#         def length(self):
+#             count = 0
+#             current = self.head
+#             while current:
+#                 count += 1
+#                 current = current.next
+#             return count
 
-        def insert(self, value, position):
-            new_node = Node(value)
-            if position <= 0 or self.head is None:
-                new_node.next = self.head
-                self.head = new_node
-                return
+#         def insert(self, value, position):
+#             new_node = Node(value)
+#             if position <= 0 or self.head is None:
+#                 new_node.next = self.head
+#                 self.head = new_node
+#                 return
 
-            current = self.head
-            index = 0
-            while current.next and index < position - 1:
-                current = current.next
-                index += 1
+#             current = self.head
+#             index = 0
+#             while current.next and index < position - 1:
+#                 current = current.next
+#                 index += 1
 
-            new_node.next = current.next
-            current.next = new_node
+#             new_node.next = current.next
+#             current.next = new_node
 
-        def traverse(self):
-            result = []
-            current = self.head
-            while current:
-                result.append(str(current.data))
-                current = current.next
-            return " ".join(result)
+#         def traverse(self):
+#             result = []
+#             current = self.head
+#             while current:
+#                 result.append(str(current.data))
+#                 current = current.next
+#             return " ".join(result)
 
-        def middle(self):
-            slow = fast = self.head
-            if not slow:
-                return None
-            while fast and fast.next:
-                slow = slow.next
-                fast = fast.next.next
-            return slow.data
+#         def middle(self):
+#             slow = fast = self.head
+#             if not slow:
+#                 return None
+#             while fast and fast.next:
+#                 slow = slow.next
+#                 fast = fast.next.next
+#             return slow.data
 
-        def delete(self, value):
-            if not self.head:
-                return
+#         def delete(self, value):
+#             if not self.head:
+#                 return
 
-            if self.head.data == value:
-                self.head = self.head.next
-                return
+#             if self.head.data == value:
+#                 self.head = self.head.next
+#                 return
 
-            current = self.head
-            while current.next:
-                if current.next.data == value:
-                    current.next = current.next.next
-                    return
-                current = current.next
+#             current = self.head
+#             while current.next:
+#                 if current.next.data == value:
+#                     current.next = current.next.next
+#                     return
+#                 current = current.next
 
-        def reverse(self):
-            previous = None
-            current = self.head
-            while current:
-                next_node = current.next
-                current.next = previous
-                previous = current
-                current = next_node
-            self.head = previous
+#         def reverse(self):
+#             previous = None
+#             current = self.head
+#             while current:
+#                 next_node = current.next
+#                 current.next = previous
+#                 previous = current
+#                 current = next_node
+#             self.head = previous
 
-        def consecutive_sums(self):
-            sums = []
-            current = self.head
-            while current and current.next:
-                sums.append(str(current.data + current.next.data))
-                current = current.next
-            return " ".join(sums)
+#         def consecutive_sums(self):
+#             sums = []
+#             current = self.head
+#             while current and current.next:
+#                 sums.append(str(current.data + current.next.data))
+#                 current = current.next
+#             return " ".join(sums)
 
-        def delete_first(self):
-            if self.head:
-                self.head = self.head.next
+#         def delete_first(self):
+#             if self.head:
+#                 self.head = self.head.next
 
-        def delete_last(self):
-            if not self.head:
-                return
-            if not self.head.next:
-                self.head = None
-                return
-            current = self.head
-            while current.next.next:
-                current = current.next
-            current.next = None
+#         def delete_last(self):
+#             if not self.head:
+#                 return
+#             if not self.head.next:
+#                 self.head = None
+#                 return
+#             current = self.head
+#             while current.next.next:
+#                 current = current.next
+#             current.next = None
 
-    ll = LinkedList()
-    ll.create([1, 2, 3, 4, 5])
+#     ll = LinkedList()
+#     ll.create([1, 2, 3, 4, 5])
 
-    print("Linked List:", ll.traverse())
+#     print("Linked List:", ll.traverse())
 
-    ll.insert(10, 2)
-    print("After Insertion:", ll.traverse())
+#     ll.insert(10, 2)
+#     print("After Insertion:", ll.traverse())
 
-    print("Middle Node:", ll.middle())
+#     print("Middle Node:", ll.middle())
 
-    ll.delete_first()
-    print("After Deleting First:", ll.traverse())
+#     ll.delete_first()
+#     print("After Deleting First:", ll.traverse())
 
-    ll.delete_last()
-    print("After Deleting Last:", ll.traverse())
+#     ll.delete_last()
+#     print("After Deleting Last:", ll.traverse())
 
-    ll.delete(10)
-    print("After Deletion:", ll.traverse())
+#     ll.delete(10)
+#     print("After Deletion:", ll.traverse())
 
-    ll.reverse()
-    print("Reversed List:", ll.traverse())
+#     ll.reverse()
+#     print("Reversed List:", ll.traverse())
 
-    print("Consecutive Sums:", ll.consecutive_sums())
+#     print("Consecutive Sums:", ll.consecutive_sums())
 
 
-if __name__ == "__main__":
-    solution()
+# if __name__ == "__main__":
+#     solution()
 
+
+
+
+
+# 1. Count vowels in a file
+with open("data.txt") as f:
+    text = f.read()
+count = sum(1 for ch in text.lower() if ch in "aeiou")
+print("Vowels:", count)
+
+
+
+# 2. Lines into a list; total, 2nd and 4th line
+with open("data.txt") as f:
+    lines = f.readlines()
+print("Total lines:", len(lines))
+if len(lines) >= 2:
+    print("2nd line:", lines[1].strip())
+if len(lines) >= 4:
+    print("4th line:", lines[3].strip())
+
+
+# 3. Sentence words list, longest word
+sentence = input("Enter a sentence: ")
+words = sentence.split()
+print(words)
+print("Longest word:", max(words, key=len))
+
+
+# 4. File words list
+with open("data.txt") as f:
+    words = f.read()
+    length = words.split()
+print("Total words:", len(length))
+print("Unique words:", set(length))
