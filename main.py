@@ -1536,155 +1536,155 @@
 # print("Total words:", len(length))
 # print("Unique words:", set(length))
 
-def solution():
-    class Node:
-        def __init__(self, data):
-            self.data = data
-            self.next = None
+# def solution():
+#     class Node:
+#         def __init__(self, data):
+#             self.data = data
+#             self.next = None
 
-    class CircularLinkedList:
-        def __init__(self):
-            self.head = None
-            self.tail = None
+#     class CircularLinkedList:
+#         def __init__(self):
+#             self.head = None
+#             self.tail = None
 
-        def create(self, values):
-            for value in values:
-                self.insert(value, self.length())
+#         def create(self, values):
+#             for value in values:
+#                 self.insert(value, self.length())
 
-        def length(self):
-            if not self.head:
-                return 0
-            count = 1
-            current = self.head.next
-            while current is not self.head:
-                count += 1
-                current = current.next
-            return count
+#         def length(self):
+#             if not self.head:
+#                 return 0
+#             count = 1
+#             current = self.head.next
+#             while current is not self.head:
+#                 count += 1
+#                 current = current.next
+#             return count
 
-        def insert(self, value, position):
-            new_node = Node(value)
-            if self.head is None:
-                new_node.next = new_node
-                self.head = self.tail = new_node
-                return
-            if position <= 0:
-                new_node.next = self.head
-                self.tail.next = new_node
-                self.head = new_node
-                return
-            current = self.head
-            index = 0
-            while current is not self.tail and index < position - 1:
-                current = current.next
-                index += 1
-            new_node.next = current.next
-            current.next = new_node
-            if current is self.tail:
-                self.tail = new_node
+#         def insert(self, value, position):
+#             new_node = Node(value)
+#             if self.head is None:
+#                 new_node.next = new_node
+#                 self.head = self.tail = new_node
+#                 return
+#             if position <= 0:
+#                 new_node.next = self.head
+#                 self.tail.next = new_node
+#                 self.head = new_node
+#                 return
+#             current = self.head
+#             index = 0
+#             while current is not self.tail and index < position - 1:
+#                 current = current.next
+#                 index += 1
+#             new_node.next = current.next
+#             current.next = new_node
+#             if current is self.tail:
+#                 self.tail = new_node
 
-        def traverse(self):
-            if not self.head:
-                return ""
-            result = []
-            current = self.head
-            while True:
-                result.append(str(current.data))
-                current = current.next
-                if current is self.head:
-                    break
-            return " ".join(result)
+#         def traverse(self):
+#             if not self.head:
+#                 return ""
+#             result = []
+#             current = self.head
+#             while True:
+#                 result.append(str(current.data))
+#                 current = current.next
+#                 if current is self.head:
+#                     break
+#             return " ".join(result)
 
-        def middle(self):
-            if not self.head:
-                return None
-            current = self.head
-            for _ in range(self.length() // 2):
-                current = current.next
-            return current.data
+#         def middle(self):
+#             if not self.head:
+#                 return None
+#             current = self.head
+#             for _ in range(self.length() // 2):
+#                 current = current.next
+#             return current.data
 
-        def delete_first(self):
-            if not self.head:
-                return
-            if self.head is self.tail:
-                self.head = self.tail = None
-                return
-            self.head = self.head.next
-            self.tail.next = self.head
+#         def delete_first(self):
+#             if not self.head:
+#                 return
+#             if self.head is self.tail:
+#                 self.head = self.tail = None
+#                 return
+#             self.head = self.head.next
+#             self.tail.next = self.head
 
-        def delete_last(self):
-            if not self.head:
-                return
-            if self.head is self.tail:
-                self.head = self.tail = None
-                return
-            current = self.head
-            while current.next is not self.tail:
-                current = current.next
-            current.next = self.head
-            self.tail = current
+#         def delete_last(self):
+#             if not self.head:
+#                 return
+#             if self.head is self.tail:
+#                 self.head = self.tail = None
+#                 return
+#             current = self.head
+#             while current.next is not self.tail:
+#                 current = current.next
+#             current.next = self.head
+#             self.tail = current
 
-        def delete(self, value):
-            if not self.head:
-                return
-            if self.head.data == value:
-                self.delete_first()
-                return
-            current = self.head
-            while current.next is not self.head:
-                if current.next.data == value:
-                    if current.next is self.tail:
-                        self.tail = current
-                    current.next = current.next.next
-                    return
-                current = current.next
+#         def delete(self, value):
+#             if not self.head:
+#                 return
+#             if self.head.data == value:
+#                 self.delete_first()
+#                 return
+#             current = self.head
+#             while current.next is not self.head:
+#                 if current.next.data == value:
+#                     if current.next is self.tail:
+#                         self.tail = current
+#                     current.next = current.next.next
+#                     return
+#                 current = current.next
 
-        def reverse(self):
-            if not self.head:
-                return
-            previous = self.tail
-            current = self.head
-            for _ in range(self.length()):
-                next_node = current.next
-                current.next = previous
-                previous = current
-                current = next_node
-            self.head, self.tail = self.tail, self.head
+#         def reverse(self):
+#             if not self.head:
+#                 return
+#             previous = self.tail
+#             current = self.head
+#             for _ in range(self.length()):
+#                 next_node = current.next
+#                 current.next = previous
+#                 previous = current
+#                 current = next_node
+#             self.head, self.tail = self.tail, self.head
 
-        def consecutive_sums(self):
-            n = self.length()
-            if n < 2:
-                return ""
-            sums = []
-            current = self.head
-            for _ in range(n):  
-                sums.append(str(current.data + current.next.data))
-                current = current.next
-            return " ".join(sums)
+#         def consecutive_sums(self):
+#             n = self.length()
+#             if n < 2:
+#                 return ""
+#             sums = []
+#             current = self.head
+#             for _ in range(n):  
+#                 sums.append(str(current.data + current.next.data))
+#                 current = current.next
+#             return " ".join(sums)
 
-    cl = CircularLinkedList()
-    cl.create([1, 2, 3, 4, 5])
-    print("Circular List:", cl.traverse())
+#     cl = CircularLinkedList()
+#     cl.create([1, 2, 3, 4, 5])
+#     print("Circular List:", cl.traverse())
 
-    cl.insert(10, 2)
-    print("After Insertion:", cl.traverse())
+#     cl.insert(10, 2)
+#     print("After Insertion:", cl.traverse())
 
-    print("Middle Node:", cl.middle())
+#     print("Middle Node:", cl.middle())
 
-    cl.delete_first()
-    print("After Deleting First:", cl.traverse())
+#     cl.delete_first()
+#     print("After Deleting First:", cl.traverse())
 
-    cl.delete_last()
-    print("After Deleting Last:", cl.traverse())
+#     cl.delete_last()
+#     print("After Deleting Last:", cl.traverse())
 
-    cl.delete(10)
-    print("After Deletion:", cl.traverse())
+#     cl.delete(10)
+#     print("After Deletion:", cl.traverse())
 
-    cl.reverse()
-    print("Reversed List:", cl.traverse())
+#     cl.reverse()
+#     print("Reversed List:", cl.traverse())
 
-    print("Consecutive Sums:", cl.consecutive_sums())
-    print("Circular check:", cl.tail.next is cl.head)
+#     print("Consecutive Sums:", cl.consecutive_sums())
+#     print("Circular check:", cl.tail.next is cl.head)
 
 
-if __name__ == "__main__":
-    solution()
+# if __name__ == "__main__":
+#     solution()
