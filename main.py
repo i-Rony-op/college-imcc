@@ -1688,3 +1688,116 @@
 
 # if __name__ == "__main__":
 #     solution()
+
+
+
+#Double linear linked list
+class Node:
+    def __init__(self,value):
+        self.prev=None
+        self.data=value
+        self.next=None
+
+class DoubleLinkedList():
+    def __init__(self):
+        self.head=None
+
+    def append(self,new_node):
+        if self.head==None:
+            self.head=new_node
+        else:
+            temp=self.head
+            while temp.next!=None:
+                temp=temp.next
+            temp.next=new_node
+            new_node.prev=temp
+
+    def print(self):
+        temp=self.head
+        while temp:
+            print(temp.data,end="->")
+            temp=temp.next
+        print()
+
+    def insert_at_pos(self,pos,new_node):
+        if pos==1:
+            new_node.next=self.head
+            if self.head:
+                self.head.prev=new_node
+            self.head=new_node
+        else:
+            p=1
+            temp=self.head
+            while p!=pos-1:
+                temp=temp.next
+                p+=1
+            new_node.next=temp.next
+            new_node.prev=temp
+            if temp.next:
+                temp.next.prev=new_node
+            temp.next=new_node
+
+    def delete(self,value):
+        temp=self.head
+        if temp==None:
+            print("Empty List!")
+            return
+        while temp and temp.data!=value:
+            temp=temp.next
+        if temp==None:
+            print("Value is not Present in the list")
+            return
+        if temp.prev:
+            temp.prev.next=temp.next
+        else:
+            self.head=temp.next
+        if temp.next:
+            temp.next.prev=temp.prev
+
+    def reverse(self):
+        curr=self.head
+        prev=None
+        while curr:
+            nex_node=curr.next
+            curr.next=curr.prev
+            curr.prev=nex_node
+            prev=curr
+            curr=nex_node
+        self.head=prev
+
+    def first_last_node_del(self):
+        if self.head==None:
+            print("Empty List!")
+            return
+        self.head=self.head.next
+        if self.head==None:
+            return
+        self.head.prev=None
+        temp=self.head
+        while temp.next!=None:
+            temp=temp.next
+        if temp.prev:
+            temp.prev.next=None
+        else:
+            self.head=None
+
+list1=DoubleLinkedList()
+n1=Node(10)
+n2=Node(20)
+list1.append(n1)
+list1.append(n2)
+list1.append(Node(30))
+list1.append(Node(40))
+list1.insert_at_pos(3,Node(100))
+list1.delete(10)
+
+list1.print()
+print("---------------")
+list1.delete(2000)
+list1.print()
+# list1.reverse()
+print("-------------------")
+list1.print()
+print("-----------------")
+list1.first_last_node_del()
+list1.print()
