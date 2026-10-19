@@ -1656,7 +1656,7 @@
 #                 return ""
 #             sums = []
 #             current = self.head
-#             for _ in range(n):  
+#             for _ in range(n):
 #                 sums.append(str(current.data + current.next.data))
 #                 current = current.next
 #             return " ".join(sums)
@@ -1690,114 +1690,160 @@
 #     solution()
 
 
+# # Double linear linked list
+# class Node:
+#     def __init__(self, value):
+#         self.prev = None
+#         self.data = value
+#         self.next = None
 
-#Double linear linked list
-class Node:
-    def __init__(self,value):
-        self.prev=None
-        self.data=value
-        self.next=None
 
-class DoubleLinkedList():
-    def __init__(self):
-        self.head=None
+# class DoubleLinkedList:
+#     def __init__(self):
+#         self.head = None
 
-    def append(self,new_node):
-        if self.head==None:
-            self.head=new_node
-        else:
-            temp=self.head
-            while temp.next!=None:
-                temp=temp.next
-            temp.next=new_node
-            new_node.prev=temp
+#     def append(self, new_node):
+#         if self.head is None:
+#             self.head = new_node
+#             return
+#         temp = self.head
+#         while temp.next is not None:
+#             temp = temp.next
+#         temp.next = new_node
+#         new_node.prev = temp
 
-    def print(self):
-        temp=self.head
-        while temp:
-            print(temp.data,end="->")
-            temp=temp.next
-        print()
+#     def display(self):
+#         temp = self.head
+#         while temp:
+#             print(temp.data, end="->")
+#             temp = temp.next
+#         print()
 
-    def insert_at_pos(self,pos,new_node):
-        if pos==1:
-            new_node.next=self.head
-            if self.head:
-                self.head.prev=new_node
-            self.head=new_node
-        else:
-            p=1
-            temp=self.head
-            while p!=pos-1:
-                temp=temp.next
-                p+=1
-            new_node.next=temp.next
-            new_node.prev=temp
-            if temp.next:
-                temp.next.prev=new_node
-            temp.next=new_node
+#     def display_reverse(self):
+#         if self.head is None:
+#             print("Empty List!")
+#             return
+#         temp = self.head
+#         while temp.next is not None:
+#             temp = temp.next
+#         while temp:
+#             print(temp.data, end="->")
+#             temp = temp.prev
+#         print()
 
-    def delete(self,value):
-        temp=self.head
-        if temp==None:
-            print("Empty List!")
-            return
-        while temp and temp.data!=value:
-            temp=temp.next
-        if temp==None:
-            print("Value is not Present in the list")
-            return
-        if temp.prev:
-            temp.prev.next=temp.next
-        else:
-            self.head=temp.next
-        if temp.next:
-            temp.next.prev=temp.prev
+#     def insert_at_pos(self, pos, new_node):
+#         if pos < 1:
+#             print("Invalid position")
+#             return
+#         if pos == 1:
+#             new_node.next = self.head
+#             if self.head:
+#                 self.head.prev = new_node
+#             self.head = new_node
+#             return
+#         p = 1
+#         temp = self.head
+#         while temp and p != pos - 1:
+#             temp = temp.next
+#             p += 1
+#         if temp is None:
+#             print("Position out of range")
+#             return
+#         new_node.next = temp.next
+#         new_node.prev = temp
+#         if temp.next:
+#             temp.next.prev = new_node
+#         temp.next = new_node
 
-    def reverse(self):
-        curr=self.head
-        prev=None
-        while curr:
-            nex_node=curr.next
-            curr.next=curr.prev
-            curr.prev=nex_node
-            prev=curr
-            curr=nex_node
-        self.head=prev
+#     def delete(self, value):
+#         if self.head is None:
+#             print("Empty List!")
+#             return
+#         temp = self.head
+#         while temp and temp.data != value:
+#             temp = temp.next
+#         if temp is None:
+#             print("Value is not Present in the list")
+#             return
+#         if temp.prev:
+#             temp.prev.next = temp.next
+#         else:
+#             self.head = temp.next
+#         if temp.next:
+#             temp.next.prev = temp.prev
 
-    def first_last_node_del(self):
-        if self.head==None:
-            print("Empty List!")
-            return
-        self.head=self.head.next
-        if self.head==None:
-            return
-        self.head.prev=None
-        temp=self.head
-        while temp.next!=None:
-            temp=temp.next
-        if temp.prev:
-            temp.prev.next=None
-        else:
-            self.head=None
+#     def reverse(self):
+#         curr = self.head
+#         prev = None
+#         while curr:
+#             nex_node = curr.next
+#             curr.next = curr.prev
+#             curr.prev = nex_node
+#             prev = curr
+#             curr = nex_node
+#         self.head = prev
 
-list1=DoubleLinkedList()
-n1=Node(10)
-n2=Node(20)
-list1.append(n1)
-list1.append(n2)
-list1.append(Node(30))
-list1.append(Node(40))
-list1.insert_at_pos(3,Node(100))
-list1.delete(10)
+#     def first_last_node_del(self):
+#         if self.head is None:
+#             print("Empty List!")
+#             return
+#         if self.head.next is None:
+#             self.head = None
+#             return
+#         self.head = self.head.next
+#         self.head.prev = None
+#         if self.head.next is None:
+#             self.head = None
+#             return
+#         # remove last
+#         temp = self.head
+#         while temp.next is not None:
+#             temp = temp.next
+#         temp.prev.next = None
 
-list1.print()
-print("---------------")
-list1.delete(2000)
-list1.print()
-# list1.reverse()
-print("-------------------")
-list1.print()
-print("-----------------")
-list1.first_last_node_del()
-list1.print()
+
+# list1 = DoubleLinkedList()
+# list1.append(Node(10))
+# list1.append(Node(20))
+# list1.append(Node(30))
+# list1.append(Node(40))
+# list1.insert_at_pos(3, Node(100))
+# list1.delete(10)
+
+# list1.display()
+# print("---------------")
+# list1.delete(2000)
+# list1.display()
+# # list1.reverse()
+# print("-------------------")
+# list1.display()
+# print("-----------------")
+# list1.first_last_node_del()
+# list1.display()
+# list1.display_reverse()
+
+
+# def greet(name):
+#     print("Hello", name)
+
+
+# n = int(input("Enter Number: "))
+# m = int(input("Enter Number: "))
+
+
+# def number(x, y):
+#     return x % y
+
+# print(number(n, m))
+
+
+n = int(input("Enter Number: "))
+
+
+def table(x):
+  for i in range(11):
+    print(f"{x} X {i} = {x*i}")
+
+
+
+table(n)
