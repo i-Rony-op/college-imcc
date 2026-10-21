@@ -1837,13 +1837,36 @@
 # print(number(n, m))
 
 
-n = int(input("Enter Number: "))
+# n = int(input("Enter Number: "))
 
 
-def table(x):
-  for i in range(11):
-    print(f"{x} X {i} = {x*i}")
+# def table(x):
+#   for i in range(11):
+#     print(f"{x} X {i} = {x*i}")
 
 
 
-table(n)
+# table(n)
+
+
+# def get_max(*num):
+#   if len(num) == 0:
+#     print(None)
+#   max = num[0]
+#   for i in num:
+#     if i > num[0]:
+#       max = i 
+#   print( max)
+
+# get_max(12,3,3,4,15)
+
+def get_long(*str):
+  if len(str) == 0:
+    print(None)
+  max = str[0]
+  for i in str:
+    if i > str[0]:
+      max = i 
+  print( max)
+
+get_long("hello","hi","r0ny", "raunak","radheshyam", "radheshyan")
