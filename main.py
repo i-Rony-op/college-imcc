@@ -1845,7 +1845,6 @@
 #     print(f"{x} X {i} = {x*i}")
 
 
-
 # table(n)
 
 
@@ -1855,18 +1854,75 @@
 #   max = num[0]
 #   for i in num:
 #     if i > num[0]:
-#       max = i 
+#       max = i
 #   print( max)
 
 # get_max(12,3,3,4,15)
 
-def get_long(*str):
-  if len(str) == 0:
-    print(None)
-  max = str[0]
-  for i in str:
-    if i > str[0]:
-      max = i 
-  print( max)
 
-get_long("hello","hi","r0ny", "raunak","radheshyam", "radheshyan")
+def get_long(*str):
+    if len(str) == 0:
+        print(None)
+    max = str[0]
+    for i in str:
+        if i > str[0]:
+            max = i
+    print(max)
+
+
+get_long("hello", "hi", "r0ny", "raunak", "radheshyam", "radheshyan")
+
+
+class Node:
+    def __init__(self, value):
+        self.data = value
+        self.next = None
+
+
+class Stack:
+    def __init__(self):
+        self.top = None
+
+    def isEmpty(self):
+        return self.top is None
+
+    def push(self, node):
+        node.next = self.top
+        self.top = node
+
+    def pop(self):
+        if self.isEmpty():
+            print("Stack is Empty")
+        else:
+            temp = self.top
+            print("Popped Element", temp.data)
+            self.top = self.top.next
+            temp = None
+
+    def reverse(self):
+      temp = self.data
+      while temp:
+        st1.push(Node(temp.data))
+        temp = temp.next
+        
+
+    def print(self):
+        temp = self.top
+        print("Stack Elements....")
+        while temp:
+            print(temp.data)
+            temp = temp.next
+
+
+st = Stack()
+st1 = Stack()
+
+st.push(Node(10))
+st.push(Node(20))
+st.push(Node(30))
+st.push(Node(40))
+st.push(Node(50))
+st.print()
+st.pop()
+st.pop()
+st.print()
