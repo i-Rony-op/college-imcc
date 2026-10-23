@@ -1860,69 +1860,118 @@
 # get_max(12,3,3,4,15)
 
 
-def get_long(*str):
-    if len(str) == 0:
-        print(None)
-    max = str[0]
-    for i in str:
-        if i > str[0]:
-            max = i
-    print(max)
+# def get_long(*str):
+#     if len(str) == 0:
+#         print(None)
+#     max = str[0]
+#     for i in str:
+#         if i > str[0]:
+#             max = i
+#     print(max)
 
 
-get_long("hello", "hi", "r0ny", "raunak", "radheshyam", "radheshyan")
+# get_long("hello", "hi", "r0ny", "raunak", "radheshyam", "radheshyan")
 
 
-class Node:
-    def __init__(self, value):
-        self.data = value
-        self.next = None
+# class Node:
+#     def __init__(self, value):
+#         self.data = value
+#         self.next = None
 
 
-class Stack:
-    def __init__(self):
-        self.top = None
+# class Stack:
+#     def __init__(self):
+#         self.top = None
 
-    def isEmpty(self):
-        return self.top is None
+#     def isEmpty(self):
+#         return self.top is None
 
-    def push(self, node):
-        node.next = self.top
-        self.top = node
+#     def push(self, node):
+#         node.next = self.top
+#         self.top = node
 
-    def pop(self):
-        if self.isEmpty():
-            print("Stack is Empty")
-        else:
-            temp = self.top
-            print("Popped Element", temp.data)
-            self.top = self.top.next
-            temp = None
+#     def pop(self):
+#         if self.isEmpty():
+#             print("Stack is Empty")
+#         else:
+#             temp = self.top
+#             print("Popped Element", temp.data)
+#             self.top = self.top.next
+#             temp = None
 
-    def reverse(self):
-      temp = self.data
-      while temp:
-        st1.push(Node(temp.data))
-        temp = temp.next
+#     def reverse(self):
+#       temp = self.data
+#       while temp:
+#         st1.push(Node(temp.data))
+#         temp = temp.next
         
 
-    def print(self):
-        temp = self.top
-        print("Stack Elements....")
-        while temp:
-            print(temp.data)
-            temp = temp.next
+#     def print(self):
+#         temp = self.top
+#         print("Stack Elements....")
+#         while temp:
+#             print(temp.data)
+#             temp = temp.next
 
 
-st = Stack()
-st1 = Stack()
+# st = Stack()
+# st1 = Stack()
 
-st.push(Node(10))
-st.push(Node(20))
-st.push(Node(30))
-st.push(Node(40))
-st.push(Node(50))
-st.print()
-st.pop()
-st.pop()
-st.print()
+# st.push(Node(10))
+# st.push(Node(20))
+# st.push(Node(30))
+# st.push(Node(40))
+# st.push(Node(50))
+# st.print()
+# st.pop()
+# st.pop()
+# st.print()
+
+
+# class Node:
+#   def __init__(self, value):
+#     self.data = value
+#     self.next = None
+
+# class LQ:
+#   def __init__(self):
+#     self.front = self.rear = None
+
+#   def enqueue(self, node):
+#     if self.rear:
+#       self.rear.next = node
+#       self.rear = node
+#     else:
+#       self.front = self.rear = node
+#   def dequeue(self):
+#     if self.front:
+#       temp = self.front
+#       self.front = self.front.next
+#       if self.front == None:
+#         self.rear = None
+#         print("Now Queue is Empty")
+#       temp = None
+#     else:
+#       print("Queue is Empty....!")
+  
+#   def print(self):
+#     temp = self.front
+#     while temp:
+#       print(temp.data, end=" ")
+#       temp = temp.next  
+
+# q = LQ()
+# q.enqueue(Node(39))
+# q.enqueue(Node(94))
+# q.enqueue(Node(46))
+# q.enqueue(Node(374))
+# q.enqueue(Node(35))
+# q.enqueue(Node(392))
+# q.dequeue()
+# q.dequeue()
+# q.dequeue()
+# q.dequeue()
+# q.dequeue()
+# q.dequeue()
+# q.print()
+
