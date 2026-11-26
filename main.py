@@ -2069,9 +2069,6 @@
 
 
 
-from logging import root
-
-
 class Node:
     def __init__(self,value):
             self.left = None
@@ -2079,9 +2076,10 @@ class Node:
             self.right = None
 
 class BST:
+    
     def __init__(self):
          self.root = None
-
+         self.count = 0
     def insert(self,new_node):
         if self.root is None:
               self.root = new_node
@@ -2110,6 +2108,42 @@ class BST:
               print(rt.data,end =" ")
               self.inorder(rt.right)
 
+    def level_order(self,rt):
+        if rt is None:
+            print("bst is empty")
+            return
+        arr =[]
+        cnt = 0
+        arr.append(rt)
+        while(cnt<len(arr)):
+            temp = arr[cnt]
+            cnt +=1
+            print(temp.data,end=" ")
+            if temp.left:
+                arr.append(temp.left)
+            if temp.right:
+                arr.append(temp.right)
+
+    def countleaf(self,rt):
+        if rt is None:
+            return
+        else:
+            self.countleaf(rt.left)
+            if rt.left is None and rt.right is None:
+                self.count += 1
+            print(rt.data,end =" ")
+            self.countleaf(rt.right)
+
+    def countnleaf(self,rt):
+        if rt is None:
+            return
+        else:
+            self.countnleaf(rt.left)
+            if rt.left is not None or rt.right is not None:
+                self.count += 1
+            print(rt.data,end =" ")
+            self.countnleaf(rt.right)
+
     def preorder(self,rt):
          if rt is None:
             return
@@ -2127,11 +2161,13 @@ class BST:
             print(rt.data,end =" ")
 
     def findminmax(self,rt):
-        temp = self.root
+        if rt is None:
+            return
+        temp = rt
         while temp.left:
             temp = temp.left
         print("\nMin : ",temp.data)
-        temp = self.root
+        temp = rt
         while temp.right:
             temp = temp.right
         print("\nMax : ",temp.data)
@@ -2167,20 +2203,13 @@ class BST:
     def search(self,key):
         temp = self.root
         while temp:
-          if temp.data == key:
-            return True
-          elif key<temp.data:
-            temp = temp.left
-          else:
-            temp = temp.right
+            if temp.data == key:
+                return True
+            elif key<temp.data:
+                temp = temp.left
+            else:
+                temp = temp.right
         return False
-    def countnleaf(self,rt):
-      if rt is None:
-        return
-      else:
-        pass
-
-
 
 
 b1= BST()
@@ -2198,21 +2227,30 @@ print("\nPreorder : ")
 b1.preorder(b1.root)
 print("\nPostorder : ")
 b1.postorder(b1.root)
-b1.findminmax(b1)
+b1.findminmax(b1.root)
 print()
-b1.deletenode(b1.root,4)
+b1.root = b1.deletenode(b1.root,4)
 print("\nInorder after delete : ")
 b1.inorder(b1.root)
-b1.deletenode(b1.root,65)
+b1.root = b1.deletenode(b1.root,65)
 print("\nInorder after delete : ")
 b1.inorder(b1.root)
-b1.deletenode(b1.root,450)
+b1.root = b1.deletenode(b1.root,450)
 print("\nInorder after delete : ")
 b1.inorder(b1.root)
 b1.search(50)
-b1.count(root)
-
-
+b1.count = 0
+b1.countleaf(b1.root)
+print("\n total number of leaf nodes : ",b1.count)
+b1.count = 0
+b1.countnleaf(b1.root)
+print("\n total number of non leaf nodes : ",b1.count)
+if b1.search(50):
+    print("\nfound the node")
+else:
+    print("\nnot found")
+print("\nLevel order :")
+b1.level_order(b1.root)
 
 
 
